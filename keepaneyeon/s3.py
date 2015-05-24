@@ -3,7 +3,7 @@ import boto.s3.key
 import urlparse
 
 class S3Storage():
-    def __init__(self, opts):
+    def __init__(self, **opts):
         self.conn = boto.s3.connection.S3Connection(
                 opts['access_key'],
                 opts['secret_access_key'])
