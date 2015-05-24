@@ -44,3 +44,11 @@ class S3Storage():
         k = boto.s3.key.Key(self.bucket)
         k.key = self.key_for_name(name)
         k.set_contents_from_filename(filename)
+
+    def store_from_string(self, name, string):
+        """
+        Store given string under the provided name.
+        """
+        k = boto.s3.key.Key(self.bucket)
+        k.key = self.key_for_name(name)
+        k.set_contents_from_string(string)
