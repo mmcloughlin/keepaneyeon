@@ -44,7 +44,7 @@ class VersionedStorage():
         # and record the new digest
         metadata = {
                 'name': name,
-                'timestamp': ts,
+                'timestamp': now,
                 }
         metadata_string = yaml.dump(metadata, default_flow_style=False)
         self.store.store_from_string(version_name, metadata_string)
