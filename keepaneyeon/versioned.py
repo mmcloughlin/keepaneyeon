@@ -23,8 +23,8 @@ class VersionedStorage():
                 h.update(chunk)
         return h.hexdigest()
 
-    def version_name(self, digest):
-        return self.meta_directory + '/versions/' + digest
+    def version_name(self, name, digest):
+        return self.meta_directory + '/versions/' + name + '/' + digest
 
     def store_from_filename(self, name, filename):
         """
@@ -32,7 +32,7 @@ class VersionedStorage():
         """
         # check if we already have this version
         digest = self.digest(filename)
-        version_name = self.version_name(digest)
+        version_name = self.version_name(name, digest)
         if self.store.exists(version_name):
             return
         # this is new
