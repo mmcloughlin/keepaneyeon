@@ -16,6 +16,7 @@ setup(name='keepaneyeon',
       tests_require=[
           'nose',
           'coverage',
+          'mock',
           'responses',
           'moto',
           ],
