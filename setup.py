@@ -11,5 +11,11 @@ setup(name='keepaneyeon',
           'console_scripts': [
               'keepaneyeon = keepaneyeon.cli:main',
               ]
-          }
+          },
+      test_suite='nose.collector',
+      tests_require=[
+          'nose',
+          'coverage',
+          'responses',
+          ],
       )
