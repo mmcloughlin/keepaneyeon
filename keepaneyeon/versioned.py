@@ -3,10 +3,10 @@ import datetime
 import yaml
 
 class VersionedStorage():
-    def __init__(self, store, digest='md5'):
+    def __init__(self, store, digest='md5', meta_directory='.keepaneyeon'):
         self.store = store
         self.digest_type = digest
-        self.meta_directory = '.keepaneyeon'
+        self.meta_directory = meta_directory
 
     def digest(self, filename):
         """
