@@ -1,7 +1,7 @@
 import requests
 
 class HttpDownloader():
-    def __init__(self, opts={}):
+    def __init__(self, **opts):
         self.base = opts
 
     def build_request_options(self, opts):
