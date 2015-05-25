@@ -17,5 +17,6 @@ setup(name='keepaneyeon',
           'nose',
           'coverage',
           'responses',
+          'moto',
           ],
       )
