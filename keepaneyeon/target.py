@@ -10,4 +10,5 @@ class Target():
     def fetch(self):
         with tempfile.NamedTemporaryFile() as tmp:
             self.downloader.download(self.opts, tmp)
+            tmp.flush()
             self.store.store_from_filename(self.name, tmp.name)
