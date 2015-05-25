@@ -16,7 +16,7 @@ class TestConfig(unittest.TestCase):
         # register our new type
         keepaneyeon.config.register(CustomLoader, 'a', A)
         # parse some YAML
-        config_sting = """
+        config_string = """
         - !a
           k1: v1
           k2: v2
