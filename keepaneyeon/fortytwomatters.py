@@ -23,5 +23,4 @@ class FortyTwoMattersLookup():
                 'url': self.url,
                 'params': params,
                 }
-        print options
         return self.http_downloader.download(options, out)
