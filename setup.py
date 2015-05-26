@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 import re
 
 pkg_init_file = open('keepaneyeon/__init__.py').read()
@@ -10,7 +10,7 @@ setup(name='keepaneyeon',
       url='https://github.com/mmcloughlin/keepaneyeon',
       author='Michael McLoughlin',
       license='MIT',
-      packages=find_packages(),
+      packages=['keepaneyeon'],
       entry_points={
           'console_scripts': [
               'keepaneyeon = keepaneyeon.cli:main',
