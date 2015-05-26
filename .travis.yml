@@ -4,4 +4,6 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install -r dev-requirements.txt
-script: nosetests
+script: nosetests --with-coverage --cover-package keepaneyeon
+after_success:
+  coveralls
