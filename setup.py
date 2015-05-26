@@ -1,7 +1,11 @@
 from setuptools import setup, find_packages
+import re
+
+pkg_init_file = open('keepaneyeon/__init__.py').read()
+metadata = dict(re.findall("__([a-z]+)__\s*=\s*'([^']+)'", pkg_init_file))
 
 setup(name='keepaneyeon',
-      version='0.1.0',
+      version=metadata['version'],
       description='Monitor URLs for changes',
       url='https://github.com/mmcloughlin/keepaneyeon',
       author='Michael McLoughlin',
