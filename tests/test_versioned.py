@@ -3,6 +3,8 @@ import tempfile
 import mock
 import datetime
 
+from tests.util import DictStorage
+
 import keepaneyeon.versioned
 
 def create_temp_file(contents):
@@ -36,25 +38,6 @@ class TestVersionedStorageDigest(unittest.TestCase):
         store = keepaneyeon.versioned.VersionedStorage(store={}, digest='sha1')
         digest = store.digest(self.tmp.name)
         self.assertEqual(digest, '2fd4e1c67a2d28fced849ee1bb76e7391b93eb12')
-
-
-class DictStorage():
-    """
-    Mock storage class to sit behind VersionedStorage for testing
-    """
-    def __init__(self):
-        self.keys = {}
-
-    def exists(self, name):
-        return (name in self.keys)
-
-    def store_from_filename(self, name, filename):
-        with open(filename, 'rb') as f:
-            content = f.read()
-        self.store_from_string(name, content)
-
-    def store_from_string(self, name, string):
-        self.keys[name] = string
 
 
 class TestVersionedStorage(unittest.TestCase):
