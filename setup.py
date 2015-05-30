@@ -13,6 +13,7 @@ setup(name='keepaneyeon',
       long_desription=readme(),
       url='https://github.com/mmcloughlin/keepaneyeon',
       author='Michael McLoughlin',
+      author_email='mmcloughlin@gmail.com',
       license='MIT',
       packages=['keepaneyeon'],
       entry_points={
