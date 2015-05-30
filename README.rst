@@ -1,7 +1,7 @@
 keepaneyeon
 ===========
 
-|buildstatus| |coverage|
+|pypi| |buildstatus| |coverage|
 
 Monitor URLs for changes
 
@@ -42,6 +42,9 @@ download with::
   keepaneyeon config.yaml
 
 
+
+.. |pypi| image:: https://img.shields.io/pypi/v/keepaneyeon.svg
+   :target: https://pypi.python.org/pypi/keepaneyeon
 
 .. |buildstatus| image:: https://img.shields.io/travis/mmcloughlin/keepaneyeon.svg
    :target: https://travis-ci.org/mmcloughlin/keepaneyeon
