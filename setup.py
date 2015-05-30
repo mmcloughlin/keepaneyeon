@@ -16,6 +16,11 @@ setup(name='keepaneyeon',
               'keepaneyeon = keepaneyeon.cli:main',
               ]
           },
+      install_requires=[
+          'requests[security]',
+          'boto',
+          'PyYAML',
+          ],
       test_suite='nose.collector',
       tests_require=[
           'nose',
