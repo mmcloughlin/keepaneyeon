@@ -21,20 +21,20 @@ download the URLs ``http://httpbin.org/html`` and
       path: 's3://bucket/path'
 
   downloaders:
-    - &http !downloader/http
+    - &http !downloader/http {}
 
   targets:
     - !target
       name: static
       downloader: *http
       url: 'http://httpbin.org/html'
-      store: *vcs
+      store: *aws
 
     - !target
       name: dynamic
       downloader: *http
       url: 'http://httpbin.org/bytes/128'
-      store: *vcs
+      store: *aws
 
 If ``config.yaml`` contains the above configuration, you can execute the
 download with::
