@@ -19,13 +19,16 @@ class LocalStorage():
         """
         return os.path.isfile(self.path_for_name(name))
 
-    def ensure_directory(self, path):
+    @staticmethod
+    def ensure_directory(path):
         directory = os.path.dirname(path)
         try:
             os.makedirs(directory)
         except OSError as e:
             if e.errno == errno.EEXIST and os.path.isdir(path):
                 pass
+            else:
+                raise
 
     def store_from_filename(self, name, filename):
         """
