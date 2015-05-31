@@ -2,6 +2,7 @@ import yaml
 
 from keepaneyeon.http import HttpDownloader
 from keepaneyeon.fortytwomatters import FortyTwoMattersLookup
+from keepaneyeon.local import LocalStorage
 from keepaneyeon.s3 import S3Storage
 from keepaneyeon.versioned import VersionedStorage
 from keepaneyeon.target import Target
@@ -17,6 +18,7 @@ class YamlLoader(yaml.Loader):
 
 register(YamlLoader, 'downloader/http', HttpDownloader)
 register(YamlLoader, 'downloader/42matters', FortyTwoMattersLookup)
+register(YamlLoader, 'storage/local', LocalStorage)
 register(YamlLoader, 'storage/s3', S3Storage)
 register(YamlLoader, 'storage/versioned', VersionedStorage)
 register(YamlLoader, 'target', Target)
