@@ -58,6 +58,8 @@ class TestLocalStorage(unittest.TestCase):
         mock_makedirs.side_effect = e
         mock_isdir.return_value = True
         self.store.ensure_directory('/tmp/blah/x')
+        self.assertTrue(mock_makedirs.called)
+        self.assertTrue(mock_isdir.called)
 
     @nose.tools.raises
     @mock.patch.object(keepaneyeon.local.os, 'makedirs')
